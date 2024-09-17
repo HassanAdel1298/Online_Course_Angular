@@ -1,0 +1,54 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div id="e" class="container m-auto">
+    <form [formGroup]="myForm" (ngSubmit)="Submit()">
+        <div id="e2" class="">
+            <div id="header" class="m-auto">
+                <h2>{{quiz.quiz_Name}}</h2>
+            </div>
+            <div id="body" class="m-auto">
+                @for (Question of Questions; track Question.question_ID)
+                {
+                    <div >
+                        <h3 style="word-wrap: break-word;">{{Question.question_Text}}</h3>
+                        <div>
+                            <ol class="mt-4" type="A">
+                                @for (Choise of Question.choises; track Choise.choise_ID) 
+                                {
+                                    <li class="mt-2" style="   font-size: 20px;
+                                    margin-bottom: 10px;
+                                    color: #333;">
+                                            <input class="ms-2" name="{{Question.question_ID}}" id="{{Choise.choise_ID}}"
+                                                (change)="onChange(Question.question_ID,Choise.isCorrect)" type="radio">
+                                            <label style="   font-size: 18px; margin-left: 5px;
+                                            cursor: pointer;
+                                            color: #555;" for="{{Choise.choise_ID}}">{{Choise.text}}</label>
+                                      
+                                    </li>
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="button">
+                <input type="submit" style="    display: block;
+                width: 100%;
+                padding: 12px;
+                background-color: #4CAF50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                font-size: 18px;" class="btn btn-primary me-5 mt-4" >
+                <!-- <input type="button" class="btn btn-primary mt-4" value="Back to Quizzes" routerLink='/Exam/{{quiz.group_ID}}' > -->
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+
+<div *ngIf="submitQuiz" class="success-alert" >
+    grade : {{grade}}
+  </div>

@@ -1,0 +1,44 @@
+<!-- <div >
+  <div id="a" aria-current="true" aria-disabled="false" href="#">
+    <div class="center-image">
+      <img alt="" class="rounded-circle mt-4" src="\assets\images\test.png" height="45" width="45">
+    </div>
+    <div aria-hidden="true" class="p-4">
+      <span style="font-size: 25px;">Quizzes</span>
+    </div>
+  </div>
+
+  <div *ngFor="let quiz of quizs">
+    <div id="b" class="d-flex justify-content-around" style="border-bottom: 4px solid #1865f2;">
+      <div><h5>{{ quiz.quiz_Name }}</h5></div>
+      <div>
+        <a class="btn btn-primary" [routerLink]="'/StdExam/' + quiz.quiz_ID">GO TO EXAM</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div id="a" class="d-flex align-items-center justify-content-center  mb-4">
+    <div class="center-image me-3">
+      <img alt="" class="rounded-circle" src="\assets\images\test.png" height="45" width="45">
+    </div>
+    <div class="p-3">
+      <h2 class=" ">Quizzes</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let quiz of quizs" class="col-md-6">
+      <div id="b" class="card mb-3 ">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <h5 class="card-title fw-medium">Exam Name:<span class="fw-normal"> {{ quiz.quiz_Name }}</span> </h5>
+
+          <a *ngIf="quiz.grade==-1" class="btn btn-primary" [routerLink]="'/StdExam/' + quiz.quiz_ID">GO TO EXAM</a>
+          <a *ngIf="quiz.grade!=-1" class="btn btn-success">your Grade : {{ quiz.grade }} / {{quiz.numQuestion}}</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

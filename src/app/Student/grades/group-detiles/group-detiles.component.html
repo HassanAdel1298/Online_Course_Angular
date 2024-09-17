@@ -1,0 +1,35 @@
+<!-- <br><br><br><br><br><br>
+
+<div class="container">
+  @if (Group){
+    <div class="card mb-3 p-5 ">
+      <h5 class="card-title">Places Details</h5>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <p><strong>Group Name:</strong> {{ Group.groupName }}</p>
+          <p><strong>Description:</strong> {{ Group.description }}</p>
+          <p><strong>Number of Student in Group :</strong> {{ Group.num_Students }}</p>
+          <p><strong>Region:</strong> {{ Places.region }}</p>
+          <p><strong>Price:</strong> {{ Places.price }}</p>
+        </div>
+        <div class="col-sm-6">
+          <p><strong>Capacity:</strong> {{ Places.capacity }}</p>
+          <p><strong>Gender:</strong> {{ Places.gender }}</p>
+          <p><strong>Num of rooms:</strong> {{ Places.numofroom }}</p>
+          <p><strong>Phone Number:</strong> {{ Places.phone }}</p>
+          <p><img [src]="Places.img"></p>
+
+        </div>
+      </div>
+      
+    </div>
+    <button type="button" class="btn btn-primary"><a routerLink="/chooseinstructor/{{Group.course_ID}}">Back to Groups</a></button>
+
+    
+  }
+  @else {
+    <div class="alert alert-danger">
+      <h1>Loading...</h1>
+    </div>
+  } -->

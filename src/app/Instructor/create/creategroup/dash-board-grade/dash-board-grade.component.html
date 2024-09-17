@@ -1,0 +1,79 @@
+<!-- <div class="jumbotron">
+    <form #form="ngForm"  (ngSubmit)="submitForm(form)" >
+        <h5 class="fs-4">Grade one</h5>
+        <hr class="my-4 w-75">
+        <p class="fst-italic">choose the subject</p>
+        <div class="form-check" *ngFor="let subject of subjects">
+            <input class="form-check-input" type="radio" id="{{subject}}" name="flexRadioDefault" [value]="subject" [(ngModel)]="selectedSubject">
+            <label class="form-check-label" for="{{subject}}" [for]="subject">{{ subject }}</label>
+        </div>
+        <div>
+            <label for="Course-Name" class="form-label mt-4">Course Name</label>
+            <input type="text" class="form-control" id="Course-Name" name="CourseName" required="required" minlength="3" value="" [(ngModel)]="CourseName"  placeholder="Enter Course Name">
+        </div>
+        <div>
+            <label for="Course-Price" class="form-label mt-4">Course Price</label>
+            <input type="number" min="0"   class="form-control" id="Course-Price" name="CoursePrice" value="" [(ngModel)]="CoursePrice"  placeholder="Enter Course price">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 m-auto w-100"  [disabled]="!selectedSubject">Add Course</button>
+    </form>
+</div> -->
+
+<div class="jumbotron container w-75 m-auto my-4">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" ngNoForm>
+        <h5 class="fs-4">{{grade.grade_Name}}</h5>
+        <hr class="my-4 w-75">
+        <p class="fst-italic">choose the Course</p>
+        @for (course of courses; track trackByFn) {
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="grade" id="{{course.name}}" 
+            (change)="onchange(course.course_ID)"
+                >
+            <label class="form-check-label" for="{{course.name}}">{{course.name}}</label>
+        </div>
+
+        }
+        <!-- <div class="form-check" >
+            <input class="form-check-input" type="radio" name="subject" id="Math" value="Math" formControlName="subject" >
+            <label class="form-check-label" for="Math">Math</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="subject" id="Arabic" value="Arabic" formControlName="subject" >
+            <label class="form-check-label" for="Arabic">Arabic</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="subject" id="Science" value="Science" formControlName="subject" >
+            <label class="form-check-label" for="Science">Science</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="subject" id="English" value="English" formControlName="subject" >
+            <label class="form-check-label" for="English">English</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="subject" id="Social" value="Social_Studies" formControlName="subject" >
+            <label class="form-check-label" for="Social">Social Studies</label>
+        </div> -->
+        @if(!subjectValid ){
+        <small class="form-text text-muted">required.</small>
+        }
+        <div>
+            <label for="Course-Name" class="form-label mt-4">Group Name</label>
+            <input type="text" class="form-control" id="Course-Name" name="CourseName" placeholder="Enter Group Name"
+                formControlName="courseName">
+            @if(!nameValid&&profileForm.get('courseName')?.touched){
+            <small id="Course-Name" class="form-text text-muted">must be more 3 letters.</small>
+            }
+        </div>
+        <div>
+            <label for="Course-Price" class="form-label mt-4">Group Price</label>
+            <input type="number" min="0" class="form-control" id="Course-Price" name="CoursePrice"
+                placeholder="Enter Group price" formControlName="coursePrice">
+            @if(!priceValid && profileForm.get('coursePrice')?.touched){
+            <small id="Course-Price" class="form-text text-muted">required and less than 1000.</small>
+            }
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 m-auto w-100 mb-4" [disabled]="!profileForm.valid">Add
+            Group</button>
+    </form>
+</div>

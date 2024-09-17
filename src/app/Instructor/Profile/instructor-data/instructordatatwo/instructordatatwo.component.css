@@ -1,0 +1,18 @@
+
+form input,textarea
+{
+    margin-top: 5px;
+    
+}
+#body
+{
+    width: 60%;
+    margin: auto auto;
+}
+#body button
+{
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: coral;
+    border: 0px;
+}

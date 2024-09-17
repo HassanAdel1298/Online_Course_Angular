@@ -1,0 +1,44 @@
+
+<div id="body" class="container mt-4">
+    <form [formGroup]="myform" (ngSubmit)="submit()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstname" formControlName="firstname"  id="fname" placeholder="First Name">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+            <input type="email" class="form-control" name="lastname" formControlName="lastname" id="lname" placeholder="Last Name">          
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio1" value="male">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" formControlName="gender"  id="inlineRadio2" value="female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+
+          <div class="input-group mt-2">
+			<input
+            type="date"
+				class="form-control"
+				placeholder="yyyy-mm-dd"
+				name="birthdate"
+                formControlName="birthdate"
+                [(ngModel)]="birthdate"
+
+			/>
+			
+		</div>
+
+  
+    <div class="form-floating mt-4">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="about" formControlName="about" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">About me</label>
+      </div>
+    <button type="submit" class=" mt-4 mb-4 " a routerLink="/step2"> Next</button>
+  </form>
+</div>

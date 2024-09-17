@@ -1,0 +1,15 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<header>
+  <h1>Choose your grade</h1>
+</header>
+    <div  class="container w-50" style="min-height: 75%; "> 
+        @for (Grade of Grades; track $index) 
+        { 
+          <div>   
+            <button class="super-beauty-button"  
+            routerLinkActive="active" routerLink="/grade/{{Grade.grade_ID}}">{{Grade.grade_Name}}</button> 
+          </div> 
+        } 
+    </div> 
+  </body>
+

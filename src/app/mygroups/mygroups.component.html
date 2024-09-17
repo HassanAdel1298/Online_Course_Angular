@@ -1,0 +1,46 @@
+<div onchange="onchange()"></div>
+
+<!-- student-groups.component.html -->
+<div *ngIf="courseGroups && courseGroups.length > 0" class="table-responsive container ">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Group Name</th>
+        <th>Course Name</th>
+        <th>Instructor Name</th>
+        <th>Number of Students</th>
+        <th>Creation Date</th>
+        <th>End Date</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of courseGroups">
+        <td>{{ group.groupName }}</td>
+        <td>{{ group.courseName }}</td>
+        <td>{{ group.instructorName }}</td>
+        <td>{{ group.num_Students }}</td>
+        <td>{{ group.creation_Date }}</td>
+        <td>{{ group.end_Date }}</td>
+        <td>{{ group.price }}</td>
+        <td class="text-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" (click)="takeQuiz(group.group_ID)">Quiz</button>
+            <button type="button" class="btn btn-primary" (click)="viewSession(group.group_ID)">Session</button>
+
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <button type="button" class="btn btn-enroll mt-3">Enroll New Group</button> -->
+  <button type="button" class="btn btn-enroll mt-3" (click)="enrollNewGroup()">Enroll New Group</button>
+
+</div>
+<div *ngIf="!courseGroups || courseGroups.length === 0" class="no-groups-message">
+  No course groups found.
+  <br>
+  <button type="button" class="btn btn-enroll mt-3" (click)="enrollNewGroup()">Enroll New Group</button>
+
+</div>

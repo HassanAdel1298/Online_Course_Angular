@@ -1,0 +1,56 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div class="container" id="container">
+  <div id="header">
+    <h1>ADD SESSION</h1>
+  </div>
+  <div id="body" class=" mt-4">
+    <form [formGroup]="myform" (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="GroupName" class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name" formControlName="Name" id="Name" placeholder=" Name"
+          required>
+        <div *ngIf="myform.get('Name')?.errors && myform.get('Name')?.touched"
+          class="form-text text-center text-danger">Session Name is required and must be letters not numbers only and must be at least 3 chars </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="GroupName" class="form-label">URL Zoom</label>
+        <input type="text" class="form-control" name="URL" formControlName="URLZoom" id="URL" placeholder=" URL"
+          required>
+        <div *ngIf="myform.get('URLZoom')?.errors && myform.get('URLZoom')?.touched"
+          class="form-text text-center text-danger">URL Zoom is required </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="GroupName" class="form-label">URL Online Video</label>
+        <input type="text" class="form-control" name="URL" formControlName="URLOnlineVideo" id="URL" placeholder=" URL"
+          required>
+        <div *ngIf="myform.get('URLOnlineVideo')?.errors && myform.get('URLOnlineVideo')?.touched"
+          class="form-text text-center text-danger">URL Online Video is required </div>
+      </div>
+
+
+      <div class="mb-3">
+        <label class="form-label">Creation Date</label>
+        <input type="datetime-local" class="form-control" name="CreationDate" formControlName="CreationDate" />
+
+        <div *ngIf="myform.get('getCreationDate')?.hasError('NowCreationmatch') ||
+           myform.get('CreationDate')?.errors &&
+            myform.get('CreationDate')?.touched" class="form-text text-center text-danger">Creation Date is required
+          and must be after now </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">End Date</label>
+        <input type="datetime-local" class="form-control" name="EndDate" formControlName="EndDate" />
+
+        <div *ngIf="myform.get('getEndDate')?.hasError('CreationEndmatch') ||
+         myform.get('EndDate')?.errors &&
+            myform.get('EndDate')?.touched" class="form-text text-center text-danger">End Date is required and must be
+          after Creation Date</div>
+      </div>
+
+
+      <button type="submit" class="btn btn-danger  " [disabled]="!myform.valid"> Submit</button>
+    </form>
+  </div>

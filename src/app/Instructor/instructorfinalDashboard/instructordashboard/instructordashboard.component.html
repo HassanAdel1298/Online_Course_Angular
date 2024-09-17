@@ -1,0 +1,26 @@
+
+<header >
+  <h1 >Online Learning Dashboard</h1>
+
+</header>
+<div class="container" >
+  <div class="sidebar">
+
+    <button class="btn-block" (click)="AllGroups()" >All Groups</button>
+    <button (click)="AllExams()">All Exams</button>
+    <button  (click)="AllSessions()">All Sessions</button>
+
+    <button  (click)="AllStudents()">All Students</button>
+
+  </div>
+
+  <div class="content">
+
+    <app-get-all-groups *ngIf="Groups" ></app-get-all-groups>
+    <app-get-all-exams *ngIf="Exams" ></app-get-all-exams>
+    <app-get-all-sessions *ngIf="Sessions" ></app-get-all-sessions>
+    <app-students *ngIf="Students" ></app-students>
+
+  </div>
+</div>
+

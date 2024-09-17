@@ -1,0 +1,129 @@
+#header
+{
+    height: 430px;
+    background-color: lightblue; 
+}
+#header h1
+{
+ text-align: center;
+    color: black;
+}
+.box
+{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin-top: 50px;
+  
+}
+#one
+{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#one a h3
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+#one a
+{
+
+    color: black;
+    text-decoration: none;
+   
+}
+#two
+{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#two a h3
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+#two a
+{
+
+    color: black;
+    text-decoration: none;
+   
+}
+#three
+{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#three a h3
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+#three a
+{
+
+    color: black;
+    text-decoration: none;
+   
+}
+#four
+{
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#four a h3
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+#four a
+{
+
+    color: black;
+    text-decoration: none;
+   
+}
+
+#one:hover
+{
+    background-color: rgb(100, 172, 196);
+}
+#two:hover
+{
+    background-color: rgb(100, 172, 196);
+}
+#three:hover
+{
+    background-color: rgb(100, 172, 196);
+}
+#four:hover
+{
+    background-color: rgb(100, 172, 196);
+}
+#container
+{
+    padding-top: 50px;
+}

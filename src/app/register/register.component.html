@@ -1,0 +1,168 @@
+<body style="background-image: url('assets/images/login2.jpeg');">
+
+  <div class="wrapper">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <h1 style="color:black">Sign up</h1>
+      <div class="inputbox">
+        <div class="inputfield">
+          <input type="text" placeholder="name" formControlName="name">
+          <img src="assets/images/user.png" style="margin-top: 5px;">
+        </div>
+        <div *ngIf="registrationForm.get('name')?.errors && registrationForm.get('name')?.touched" 
+               class="form-text text-center text-danger">Username is required and must be  only chars and at least 3 chars </div>
+      </div>
+
+      <div class="inputbox">
+        <div class="inputfield">
+          <input type="text" placeholder="Username" formControlName="username">
+          <img src="assets/images/user.png" style="margin-top: 5px;">
+        </div>
+        <div *ngIf="registrationForm.get('username')?.errors && registrationForm.get('username')?.touched" 
+               class="form-text text-center text-danger">Username is required and must be at least 3 chars and not space</div>
+      </div>
+
+      <div class="inputbox">
+        <div class="inputfield">
+          <input type="email" placeholder="Email" formControlName="email">
+          <img src="assets/images/email.png">
+        </div>
+        <div *ngIf="registrationForm.get('email')?.errors && registrationForm.get('email')?.touched" 
+               class="form-text text-center text-danger">Email address must be from'&#64;gmail.com' domain</div>
+      </div>
+      <div class="inputbox">
+        <div class="inputfield">
+          <input type="password" placeholder="Password" formControlName="password">
+          <img src="assets/images/lock.png" margin-top="10px">
+        </div>
+        <div *ngIf="registrationForm.get('password')?.errors && registrationForm.get('password')?.touched" 
+               class="form-text text-center text-danger">Password is required and must between 6 and 20 chars</div>
+      </div>
+      <div class="inputbox">
+        <div class="inputfield">
+          <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+          <img src="assets/images/lock.png" margin-top="10px">
+          <div *ngIf="registrationForm.get('confirmPassword')?.hasError('passwordMismatch')" class="form-text text-center text-danger">Passwords do not match</div>
+          
+        </div>
+      </div>
+    
+      <div class="inputbox">
+        <div class="inputfield">
+          <select class="s" formControlName="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="Instructor">Instructor</option>
+            <option value="Student">Student</option>
+          </select>
+        </div>
+        <div *ngIf="registrationForm.get('role')?.invalid && registrationForm.get('role')?.touched"
+          class="form-text text-center text-danger">Role is required.
+        </div>
+      </div>
+      
+      <div *ngIf="errormessage"
+          class="form-text text-center text-danger">{{errormessage}}
+        </div>
+        
+      <button type="submit" [disabled]="registrationForm.invalid"  style="background-color: #55b02baf;">Sign up</button>
+      
+      
+    </form>
+  </div>
+  <span *ngIf="show" class="loader"></span>
+  <div *ngIf="registrationSuccess" class="success-alert" >
+    Registration successful!
+  </div>
+  </body>
+  
+  
+  
+  
+  
+  
+  
+
+
+
+<!-- <body style="background-image: url('assets/images/photo.jpeg');">
+
+
+    <div class="wrapper">
+        <form action="" [formGroup]="myform">
+            <h1 style="color:black">Registation</h1>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="text" formControlName="username" placeholder="username" required id="username">
+                    <img src="assets/images/user.png" margin-top="10px">
+
+                </div>
+
+                @if(!myform.get('username')?.value && myform.get('username')?.touched)
+                {
+                <small id="Course-Name" style="margin-left:150px" class="form-text text-muted">user name is not in the
+                    right format.</small>
+                }
+            </div>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="email" formControlName="email" placeholder="Email" required>
+                    <img src="assets/images/email.png">
+
+                </div>
+                @if(!myform.get('email') && myform.get('email')?.touched)
+                {
+                <div style="color: blue; margin-top: 30px;">
+
+                    Invalid email format.
+                </div>
+                }
+            </div>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="password" #password1 formControlName="password" placeholder="password" required
+                        id="pass1">
+                    <img src="assets/images/lock.png" margin-top="10px">
+
+                </div>
+                @if(!myform.get('password') && myform.get('password')?.touched){
+
+                <div style="color: blue; margin-left:500px;">
+
+                    Invalid password format.
+                </div>
+                }
+            </div>
+            <div class="inputbox">
+                <div class="inputfield">
+                    <input type="password" #password2 formControlName="password" placeholder="confirm your password"
+                        id="pass2" required>
+                    <img src="assets/images/lock.png" margin-top="10px">
+                    <span id="span"></span>
+                </div>
+            </div>
+            <div class="inputbox">
+              <div class="inputfield">
+                <select formControlName="role" required>
+                  <option value="" disabled selected>Select Role</option>
+                  <option value="Instructor">Instructor</option>
+                  <option value="Student">Student</option>
+                </select>
+              </div>
+              <div *ngIf="myform.get('role')?.invalid && myform.get('role')?.touched">
+                <small id="Role-Error" style="margin-left:150px" class="form-text text-muted">Role is required.</small>
+              </div>
+            </div>
+          
+            <label><input type="checkbox" required>I admit that all the data is correct</label>
+            <button type="submit" id="button" (click)="addNewUser()">submit</button>
+
+
+        </form>
+    </div> -->
+
+<!--  -->
+
+
+
+
+<!--  -->
+

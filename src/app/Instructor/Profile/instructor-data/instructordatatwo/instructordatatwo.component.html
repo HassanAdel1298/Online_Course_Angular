@@ -1,0 +1,45 @@
+<div id="body" class="container mt-4">
+    <form [formGroup]="myform" (ngSubmit)="submit()">
+        <div class="mb-3" >
+            <label>Choose a Country:</label>
+        <select class="form-select" aria-label="Default select example"> 
+             <option selected>Open this select menu</option>
+                <option formControlName="country"  value="Riyadh">Saudi Arabia</option>
+                <option formControlName="country" value="Jeddah"> Egypt</option>
+                <option formControlName="country" value="Mecca"> Algeria</option>
+                <option formControlName="country" value="Medina">United Arab Emirates </option>
+                <option formControlName="country" value="Dammam">Iraq</option>
+                <option formControlName="country" value="Tabuk">Morocco</option>
+                <option formControlName="country" value="Abha">Yemen</option>
+                <option formControlName="country" value="Yanbu">Syria</option>
+                <option formControlName="country" value="Jubail">Sudan</option>
+                <option formControlName="country" value="Taaif">Libya</option>
+                <option formControlName="country" value="Buraidah"> Jordan</option>
+                <option formControlName="country" value="Khobar">Lebanon </option>
+                <option formControlName="country" value="Najran">Kuwait  </option>
+                <option formControlName="country" value="Hail">Oman </option>
+                <option formControlName="country" value="Khamis Mushait">  Palestine</option>
+                <option formControlName="country" value="Najran"> Qatar </option>
+                <option formControlName="country" value="Hail"> Tunisia</option>
+                <option formControlName="country" value="Khamis Mushait"> Bahrain </option>
+                
+          </select>
+            
+        </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">City</label>
+            <input type="text" class="form-control" name="lastname" formControlName="City" placeholder="Your City">          
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Address Detals</label>
+            <input type="text" class="form-control" name="Detals" formControlName="Detals"  placeholder="Address Detals">          
+          </div>
+
+        
+
+      
+
+  
+    <button id="btn" routerLink="/step3" type="submit" class=" mt-4 mb-4"><a ></a> Next</button>
+  </form>
+</div>

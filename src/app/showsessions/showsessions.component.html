@@ -1,0 +1,40 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-3">
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <h3>Exams</h3>
+            <button class="btn btn-success btn-exam" routerLink="/Exam/{{groupId}}">View Exams</button>
+          </div>
+          <ul class="list-unstyled mt-3">
+            <li class="sidebar-item" *ngFor="let session of sessions" (click)="selectSession(session)">
+              <button class="btn btn-session">{{ session.sessionName }}</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-9">
+        <div class="session-details mt-4">
+          <h2 class="group-name">Group Name: <span class="bold">{{ group?.groupName }}</span></h2>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">{{ selectedSession?.sessionName }}</h2>
+              <p class="card-text bold">Start Date: {{ selectedSession?.start_Date }}</p>
+              <p class="card-text bold">End Date: {{ selectedSession?.end_at }}</p>
+              <button *ngIf="selectedSession?.zoom" class="btn btn-primary btn-join-zoom"
+                (click)="openZoom(selectedSession?.zoom)">Join Zoom</button>
+              <p class="card-text bold">Online Video: {{ selectedSession?.OnlineVideo }}</p>
+              <div class="video-container">
+                <div *ngIf="selectedSession && selectedSession.onlineVideo">
+                  <video [src]=selectedSession.onlineVideo controls class="video-player"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,154 @@
+*{
+  margin:0; 
+  padding:0;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+body{
+  display:flex ; 
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.container{
+  width:420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color:#fff ; 
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin:70px auto;
+}
+.container h1{
+  font-size: 36px;
+  text-align:center ; 
+}
+.container .inputbox{
+  position: relative;
+  width:100% ; 
+  height:50px; 
+ 
+  margin:30px 0 ; 
+
+}
+.inputbox input{
+  width:100%; 
+  height:100% ; 
+  background: transparent;
+  outline: none;
+  border-radius: 40px ;
+  border:2px solid (255, 255, 255, 1);
+  font-size: 16px; 
+  color:#570f0f; 
+  padding:20px 45px 20px 20px; 
+  
+}
+input::placeholder{
+  color:#010000 ; 
+}
+.inputbox img{
+  position: absolute; 
+  right:20px ; 
+  top:25px; 
+  transform: translatey(-50%);
+  font-size:20px; 
+}
+.container .remember{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin:-15px 0 15px
+}
+.remember label input{
+  accent-color: #991717;
+  margin-right: 3px;
+}
+.container .button{
+  width:100%; 
+  height: 45px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px ;
+  box-shadow: 0 0 10px rgba(0, 0, 0,.1);
+  cursor: pointer;
+  font-size: 16px;
+  color:#333 ;
+  font-weight: 600;
+}
+.container .register{
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px;
+}
+.register p a{
+  color:#fff ;
+  margin-left: 10px;
+}
+.register p a:hover{
+text-decoration: underline;
+
+.loader {
+color: #fff;
+font-size: 10px;
+width: 1em;
+height: 1em;
+border-radius: 50%;
+position: relative;
+text-indent: -9999em;
+animation: mulShdSpin 1.3s infinite linear;
+transform: translateZ(0);
+}
+}
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 
+    2em -2em 0 0em, 3em 0 0 -1em, 
+    2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 
+    2em -2em 0 0, 3em 0 0 0.2em, 
+    2em 2em 0 0, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}

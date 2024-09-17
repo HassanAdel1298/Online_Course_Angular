@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #80bdff; 
+    color: #333; 
+}
+
+.navbar-brand {
+    color: #333; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #55b02baf; 
+}
+
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-size: 18px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #55b02baf !important; 
+}
+
+.btn-login-register {
+    height: 40px;
+    width: 130px;
+    background-color: black;
+    color: #fff; 
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-login-register:hover {
+    background-color: #55b02baf;
+    transform: scale(0.95);
+}

@@ -1,0 +1,15 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<header>
+    <h1>{{grade.grade_Name}}</h1>
+</header>
+<div style="min-height: 100%;">
+    <div class="container">
+        <div class="box btn" *ngFor="let course of courses" 
+        routerLinkActive="active" routerLink="/chooseinstructor/{{course.course_ID}}">
+            <h3 class="router-link" >{{course.name}}</h3>
+            <p style="color: black;" >{{course.description}} </p>
+        </div>
+        
+    </div>
+</div>
+</body>

@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top" style="height: 70px;">
+  <a class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <h2 class="m-0" style="color: black;"><i class="fa fa-user me-3"></i>
+      <span style="color: black;">My</span><span style="color: #55b02baf;">teacher</span>
+    </h2>
+  </a>
+  <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Home">Home</a>
+      </li>
+      <li class="nav-item" style="margin-left: 15px;">
+        <a class="nav-link" routerLink="/About">About</a>
+      </li>
+      <!-- <li *ngIf="isLogin && isStudent" class="nav-item" style="margin-left: 15px;">
+        <a class="nav-link" routerLink="/Courses">Courses</a>
+      </li> -->
+
+      <li *ngIf="isLogin && isStudent" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Grades
+        </a>
+        <ul  class="dropdown-menu" aria-labelledby="navbarDropdown">
+          @for (Grade of Grades; track $index) {
+          <li><button class="dropdown-item"  (click)="Choose(Grade.grade_ID)">{{Grade.grade_Name}}</button></li>
+          }
+        </ul>
+      </li>
+      <!-- routerLink="/grade/{{Grade.grade_ID}}" -->
+      
+      <!-- <li class="nav-item">
+        <a *ngIf="isLogin" class="nav-link" href="contact.html">Contact</a>
+      </li> -->
+
+
+      <li *ngIf="isLogin" class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown"
+          aria-expanded="false">{{DataUser.email}}</a>
+        <ul  class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+          <li><a *ngIf="isLogin && isInstructor" class="dropdown-item" routerLink="/Instructordashboard">Instructor Dashboard</a></li>
+  
+          <li><a  *ngIf="isLogin && isStudent" class="dropdown-item" routerLink="/mygroups">Student Dashboard</a></li>
+          <li><a  *ngIf="isLogin" class="dropdown-item" (click)="logout()">Log Out</a></li>
+  
+  
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+  <!--  -->
+
+  <!-- <ul>
+  <li><a routerLink="/">Home</a></li>
+  <li *ngIf="!isLoggedIn"><a routerLink="/Login">Login</a></li>
+  <li *ngIf="isLoggedIn"><span>{{ username }}</span></li>
+</ul> -->
+
+
+
+
+
+
+
+  
+
+  <div class="d-flex align-items-center me-4">
+
+
+    
+
+    
+    <button *ngIf="!isLogin" class="btn btn-primary btn-login-register me-2" routerLink="/Register">Sign UP</button>
+    <button *ngIf="!isLogin" class="btn btn-primary btn-login-register" routerLink="/Login">Login</button>
+
+
+  </div>
+</nav>

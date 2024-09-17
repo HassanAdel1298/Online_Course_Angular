@@ -1,0 +1,19 @@
+<div class="card mb-3"  [style]="background" (mouseover)="changeBackgroundColor(true)" (mouseout)="changeBackgroundColor(false)">
+    <div class="row g-0">
+        <div class="col-2 col-md-2 col-lg-1">
+            <img src="assets\images\early_math.png" style="width: 80px;" class="img-fluid mt-4  rounded-start m-1 " alt="...">
+        </div>
+        <div class="col-7 col-md-7 col-lg-8">
+            <div class="card-body ">
+            <strong class="card-title">Group Name: </strong><span>{{oneGroup.GroupName}}</span><br>
+            <strong class="card-title">Group Grad: </strong><span>{{oneGroup.Grade}}</span><br>
+            <strong class="card-title">Group Supject: </strong><span>{{oneGroup.subject}}</span><br>
+            <strong class="card-title">Group Price: </strong><span>{{oneGroup.GroupPrice}}</span><br>
+            <strong class="card-title">Students: </strong><span style="color: red;" >{{courseStudents}} students</span>
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-primary col-3 m-auto col-md-2 col-lg-2" (click)="redirectToCourseDetails(oneGroup.id)" >Show Details</button> -->
+        <button type="button" class="btn btn-primary col-3 m-auto col-md-2 col-lg-2" routerLink="Details/{{oneGroup.id}}">Show Details</button>
+        <!-- <a type="button" class="btn btn-primary col-3 m-auto col-md-2 col-lg-2" href="Details/{{oneGroup.id}}">Show Details</a> -->
+    </div>
+</div>

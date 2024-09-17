@@ -1,0 +1,41 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div class="container">
+  <div class="top-section">
+    <button class="btn btn-add-exam" [disabled]="!selectedGroup" (click)="Create()">
+      <p>Create New Exam</p>
+    </button>
+    <span style="margin-right: 10px;">Choose Group</span>
+    <select class="form-control" [(ngModel)]="selectedGroup" (change)="loadexams()" required>
+      <option *ngFor="let group of showgroup" [value]="group.group_ID">{{ group.groupName }}</option>
+    </select>
+
+
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Quiz Name</th>
+        <th scope="col">Number of Question</th>
+        <th scope="col">Quiz Available</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of exams">
+        <td>{{ exam.quiz_Name }}</td>
+        <td>
+          {{ exam.numQuestion }}
+          <!-- <button type="button" class="btn btn-outline-success m-2"
+            (click)="updateexam(exam.Group_ID, exam)">Update</button> -->
+          <!-- <button type="button" class="btn btn-outline-danger m-2" (click)="deleteGroup(exam.Group_ID)">Delete</button>  -->
+        </td>
+        <td>{{ exam.quiz_Available }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-success m-2" (click)="Available(exam.quiz_ID,exam)">Available</button>
+        <button type="button" class="btn btn-outline-danger m-2" (click)="NotAvailable(exam.quiz_ID,exam)">not Available</button> 
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>

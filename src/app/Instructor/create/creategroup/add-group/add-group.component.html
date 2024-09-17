@@ -1,0 +1,74 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div class="container" id="container">
+    <div id="header">
+        <h1>ADD GROUP</h1>
+    </div>
+    <div id="body" class=" mt-4">
+        <form [formGroup]="myform" (ngSubmit)="submit()" class="needs-validation" novalidate>
+
+            <label for="selectedGrade" class="form-label">choose grade</label>
+            <select class="form-control" formControlName="selectedGrade" id="selectedGrade" (change)="chooseGrade()"
+                required>
+                <option *ngFor="let grade of Grades" [value]="grade.grade_ID">{{ grade.grade_Name }}</option>
+            </select>
+            <div *ngIf="myform.get('selectedGrade')?.errors && myform.get('selectedGrade')?.touched"
+                class="form-text text-center text-danger">Please choose Grade </div>
+
+
+            <label for="selectedCourse" class="form-label">choose course</label>
+            <select class="form-control" formControlName="selectedCourse" id="selectedCourse" required>
+                <option *ngFor="let course of courses" [value]="course.course_ID">{{ course.name }}</option>
+            </select>
+            <div *ngIf="myform.get('selectedCourse')?.errors && myform.get('selectedCourse')?.touched"
+                class="form-text text-center text-danger">Please choose course </div>
+                
+
+            <div class="mb-3">
+                <label for="GroupName" class="form-label">Group Name</label>
+                <input type="text" class="form-control" name="GroupName" formControlName="groupName" id="GroupName"
+                    placeholder="Group Name" required>
+                <div *ngIf="myform.get('groupName')?.errors && myform.get('groupName')?.touched"
+                    class="form-text text-center text-danger">Group Name is required and must be letters not numbers only and must be at least 3 chars  </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Price" class="form-label">Price</label>
+                <input type="number" class="form-control" name="Price" formControlName="Price" id="Price"
+                    placeholder="Price" required>
+                <div *ngIf="myform.get('Price')?.errors && myform.get('Price')?.touched"
+                    class="form-text text-center text-danger">Price is required and must be a positive number and less
+                    1000 </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-danger  " [disabled]="!myform.valid"> Submit</button>
+        </form>
+    </div>
+    
+    <!-- <div class="container">
+    <div class="w-75 m-auto">
+        @for(g of groups;track g.id){
+        <app-all-courses [oneGroup]="g"></app-all-courses>
+        }
+    </div>
+</div> -->
+
+    <!-- <form action="">
+        <div class="row">
+            <label for="Grade" class="col-sm-2 col-form-label">Grade</label>
+            <div class="col-sm-10">
+                <input type="text" readonly="" class="form-control-plaintext" id="Grade" name="Grade" value="">
+            </div>
+        </div>
+        <div class="row">
+            <label for="subject" class="col-sm-2 col-form-label">subject</label>
+            <div class="col-sm-10">
+                <input type="text" readonly="" class="form-control-plaintext" id="subject" name="subject" value="">
+            </div>
+        </div>
+        <div>
+            <label for="Course-Name" class="form-label mt-4">Course Name</label>
+            <input type="email" class="form-control" id="Course-Name"  placeholder="Enter Course Name">
+        </div>
+    </form> -->

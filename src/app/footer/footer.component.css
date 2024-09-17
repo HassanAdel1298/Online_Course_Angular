@@ -1,0 +1,56 @@
+/* Footer Styles */
+footer {
+    background-color: #55b02b;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Section Styles */
+.footer-section {
+    padding: 20px;
+}
+
+.footer-section h6 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Custom Shape Styles */
+.custom-shape {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    background-color: #55b02baf;
+    padding: 20px;
+    margin-bottom: -10px; /* Adjust to fit your design */
+}
+
+/* Border Bottom for Footer Sections */
+.footer-section-border-bottom {
+    border-bottom: 1px solid #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,40 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div class="container">
+
+  <div class="top-section">
+
+    <button class="btn btn-add-Session" [disabled]="!selectedGroup" (click)="Create()">Create New Session</button>
+    <span>Choose Group</span>
+    <select class="form-control" [(ngModel)]="selectedGroup" placeholder="choose the Group" (change)="loadsessions()" required>
+      
+      <option *ngFor="let group of showgroup" [value]="group.group_ID">{{ group.groupName }}</option>
+    </select>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Session Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Online Video</th>
+        <th scope="col">Zoom</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let session of sessions">
+        <td>{{ session.sessionName }}</td>
+        <td>{{ session.start_Date }}</td>
+        <td>{{ session.end_at }}</td>
+        <td>{{ session.onlineVideo }}</td>
+        <td>{{ session.zoom }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-success m-2" routerLink="/UpdateSesstion/{{session.session_ID}}">Update</button>
+          <button type="button" class="btn btn-outline-danger m-2" (click)="deleteGroup(session.session_ID)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>

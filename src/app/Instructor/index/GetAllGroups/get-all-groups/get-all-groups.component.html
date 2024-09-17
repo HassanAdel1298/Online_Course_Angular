@@ -1,0 +1,41 @@
+
+<body style="background-image: url('assets/images/shape.jpg');">
+<button class="btn btn-add-exam" routerLink="/createGroup">Create New Group</button>
+
+    <div class="container">
+      
+      
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Course Name</th>
+              <th scope="col">Group Name</th>
+              <th scope="col">Number of Students</th>
+              <th scope="col">Creation Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">price</th>
+              <!-- <th></th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let group of getgroup">
+              <td> {{group.courseName}} </td>
+              <td> {{group.groupName}} </td>
+              <td>{{group.num_Students}} </td>
+              <td>{{group.creation_Date}}</td>
+              <td> {{group.end_Date}} </td>
+              <td> {{group.price}} </td>
+              <!-- <td>
+                <button type="button" class="btn btn-outline-success m-2" routerLink="/UpdateGroup/{{group.group_ID}}">Update</button>
+                 <button type="button" class="btn btn-outline-danger m-2" (click)="deleteGroup(group.group_ID)">Delete</button>
+              </td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <br>
+      <br>
+    </body>
+    
+    

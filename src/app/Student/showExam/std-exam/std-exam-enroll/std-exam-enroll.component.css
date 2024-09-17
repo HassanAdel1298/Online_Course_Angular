@@ -1,0 +1,14 @@
+#a{
+    padding: 16px ;
+    box-shadow: inset 4px 0 #1865f2 ;
+    background-color: #eeeeee ;
+    color: #21242c ;
+    border-bottom:  1px solid rgb(209, 209, 209);
+    }
+#b:hover{
+    background-color:  #eeeeee;
+}
+#b{
+    
+    box-shadow: inset 4px 0 #1865f2 ;
+}

@@ -1,0 +1,36 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<div class="container">
+  <div class="top-section">
+    
+<span style="margin-right: 10px;">Choose Group</span>
+    <select class="form-control" [(ngModel)]="selectedGroup" (change)="loadexams()" required>
+      <option *ngFor="let group of showgroup" [value]="group.group_ID">{{ group.groupName }}</option>
+    </select>
+
+    <span style="margin-right: 10px;margin-left: 10px;">Choose Exam</span>
+    <select class="form-control" [(ngModel)]="selectedExam" (change)="loadstudents()" required>
+      <option *ngFor="let exam of exams" [value]="exam.quiz_ID">{{ exam.quiz_Name }}</option>
+    </select>
+
+
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Student of Students">
+        <td>{{ Student.studentName }}</td>
+        <td>{{ Student.userName }}</td>
+        <td>{{ Student.email }}</td>
+        <td>{{ Student.grade }} / {{Student.numQuestion}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>

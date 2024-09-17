@@ -1,0 +1,36 @@
+
+ <div id="container" class="d-flex flex-row justify-content-between">
+    <div   style="width: 30%;">
+      <app-main-u style="border:  1px solid rgb(139, 139, 139) ; border-radius: 1px;" [Groupid]="id"></app-main-u>
+    </div>
+    <div id="b" style="width: 100%;">
+      <app-main [Groupid]="id"></app-main >
+    </div>
+</div>
+
+<!-- SideBar -->
+<h3>menue</h3>
+
+  <div class="main-container">
+    <app-main></app-main>
+    <div class="main-content">
+      Content 
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+<!-- feedback -->
+  <div class="cont">
+    <div class="stars">
+      <ngx-star-rating [(ngModel)]="rating" [id]="'rating'"></ngx-star-rating>->
+    </div>
+    <div>Rating: {{ rating }}</div>
+    <div>
+      <input class="feddbackInput" type="text" [(ngModel)]="feedback" placeholder="Write your feedback...">
+      <button class="feddbackBtn" (click)="showRatingAndFeedback()">Send Feedback</button>
+    </div>
+  </div>
+  <div *ngIf="displayRatingAndFeedback" class="cont">
+    <p>Rating: {{ rating }}</p>
+    <p>Feedback: {{ feedback }}</p>
+  </div>

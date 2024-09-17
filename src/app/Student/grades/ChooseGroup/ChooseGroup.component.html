@@ -1,0 +1,29 @@
+<body style="background-image: url('assets/images/shape.jpg');">
+<header>
+    <h1>{{course.name}}</h1>
+</header>
+@for (group of groups; track $index) {
+<div class="container">
+    <div class="box">
+        <div class="box-header">
+            <h2> {{group.description}} </h2>
+        </div>
+        <div class="box-body">
+            <h3  style="text-align: center;">Group Name: <p>{{group.groupName}} </p></h3>
+            <h3  style="text-align: center;">Instractor Name: <p>{{group.instructorName}} </p></h3>
+            <h3>Start Date: <p> {{group.creation_Date}} </p> </h3>  
+            <h3> End Date : <p>{{group.end_Date}} </p> </h3>
+            <h3 style="text-align: center">Number of Student in Group: <p>{{group.num_Students}} </p></h3>
+
+            <h3> Price : <p>{{group.price}} $</p></h3>
+            <button class="button1"  
+                routerLinkActive="active" routerLink="/Payment/{{group.group_ID}}"
+                >Enroll</button>
+        </div>
+    </div>
+</div>
+}
+</body>
+
+
+

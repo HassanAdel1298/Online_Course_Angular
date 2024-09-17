@@ -1,0 +1,76 @@
+/* #a{
+
+    -webkit-font-smoothing: inherit ;
+    cursor: pointer ;
+    text-align: left ;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-box-direction: normal ;
+    -webkit-box-orient: horizontal ;
+    -webkit-box-align: stretch ;
+    align-items: stretch ;
+    border-width: 0px ;
+    border-style: solid ;
+    box-sizing: border-box ;
+    display: flex ;
+    margin: 0px ;
+    z-index: 0 ;
+    min-width: 0px ;
+    min-height: 48px ;
+    flex-direction: row;
+    flex: 1 ;
+    padding: 16px ;
+    box-shadow: inset 4px 0 #1865f2 ;
+    position: relative ;
+    background-color: #1865f2 ;
+    color: #21242c ;
+    text-decoration: none;
+    list-style-type: none;
+    border-bottom:  1px solid rgb(209, 209, 209);
+    }
+    #b{
+
+        -webkit-font-smoothing: inherit ;
+        cursor: pointer ;
+        color: #21242c ;
+        text-align: left ;
+
+        font: inherit;
+        vertical-align: baseline;
+        -webkit-box-direction: normal ;
+        -webkit-box-orient: horizontal;
+        -webkit-box-align: stretch ;
+        align-items: stretch ;
+
+
+        box-sizing: border-box ;
+        display: flex ;
+        margin: 0px ;
+        z-index: 0 ;
+        min-width: 0px ;
+        min-height: 48px ;
+        flex-direction: row ;
+        flex: 1 ;
+        padding: 16px ;
+        position: relative ;
+
+        text-decoration: none;
+        border-bottom:  1px solid rgb(209, 209, 209);
+    }
+
+    #a,#b:hover{
+        background-color:white;
+        box-shadow: inset 4px 0 #f24b18 ;
+    }
+    #d
+    {
+        overflow-y: scroll;
+        height: 1000px;
+    }
+    #b a{
+        text-decoration: none;
+        text-align: center;
+        color: rgb(71, 71, 71);
+    }
+ */
